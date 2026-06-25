@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jai Dharini C S — Computer Science Engineering Student at SRM Madurai. Aspiring Software Developer skilled in Python, JavaScript, Web Development and more." />
+  <meta name="keywords" content="Jai Dharini, Portfolio, Computer Science, SRM Madurai, Software Developer, Web Development, Python, JavaScript" />
+  <meta name="author" content="Jai Dharini C S" />
+  <meta property="og:title" content="Jai Dharini C S | Portfolio" />
+  <meta property="og:description" content="Computer Science Engineering Student | Aspiring Software Developer" />
+  <meta property="og:type" content="website" />
+  <title>Jai Dharini C S | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- ===== TOAST NOTIFICATIONS ===== -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- ===== CURSOR ===== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ===== LOADER ===== -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-initials">JD</div>
+      <div class="loader-bar"><div class="loader-progress" id="loaderProgress"></div></div>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" id="navLogo">
+        <span class="logo-initials">JD</span>
+        <span class="logo-text">Jai Dharini</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <canvas id="particleCanvas"></canvas>
+      <div class="hero-gradient-orb orb-1"></div>
+      <div class="hero-gradient-orb orb-2"></div>
+      <div class="hero-gradient-orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        <span>Available for Internships</span>
+      </div>
+
+      <div class="hero-avatar reveal-up">
+        <div class="avatar-ring">
+          <div class="avatar-inner">
+            <span class="avatar-initials">JD</span>
+          </div>
+        </div>
+        <div class="avatar-status"></div>
+      </div>
+
+      <h1 class="hero-name reveal-up">
+        <span class="name-line">Jai Dharini</span>
+        <span class="name-line accent-text">C S</span>
+      </h1>
+
+      <div class="hero-typewriter reveal-up">
+        <span class="typewriter-prefix">I am a </span>
+        <span class="typewriter-text" id="typewriterText"></span>
+        <span class="typewriter-cursor">|</span>
+      </div>
+
+      <p class="hero-subtitle reveal-up">
+        Computer Science Engineering Student &nbsp;·&nbsp; Aspiring Software Developer
+      </p>
+
+      <div class="hero-cta reveal-up">
+        <a href="#projects" class="btn btn-primary" id="heroViewProjects">
+          <i class="fas fa-rocket"></i>
+          <span>View Projects</span>
+        </a>
+        <a href="#contact" class="btn btn-outline" id="heroContact">
+          <i class="fas fa-paper-plane"></i>
+          <span>Contact Me</span>
+        </a>
+      </div>
+
+      <div class="hero-social reveal-up">
+        <a href="https://github.com/jaidharini" target="_blank" rel="noopener" class="social-link" id="heroGithub" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jai-dharini-c-s-726957348/" target="_blank" rel="noopener" class="social-link" id="heroLinkedin" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:jaidharini2006@gmail.com" class="social-link" id="heroEmail" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="accent-text">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-visual reveal-left">
+          <div class="about-avatar-card">
+            <div class="about-avatar">
+              <span>JD</span>
+            </div>
+            <div class="about-glow"></div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card" id="statProjects">
+              <div class="stat-number" data-count="3">0</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-card" id="statSkills">
+              <div class="stat-number" data-count="10">0</div>
+              <div class="stat-label">Skills</div>
+            </div>
+            <div class="stat-card" id="statYear">
+              <div class="stat-number" data-count="3">0</div>
+              <div class="stat-label">Year</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content reveal-right">
+          <h3 class="about-greeting">Hello! I'm <span class="accent-text">Jai Dharini</span> 👋</h3>
+          <p class="about-text">
+            I am a <strong>third-year Computer Science Engineering student</strong> with a strong interest in 
+            software development, web technologies, and building practical applications. I enjoy learning new 
+            technologies, creating user-friendly solutions, and continuously improving my technical skills 
+            through hands-on projects.
+          </p>
+          <p class="about-text">
+            Currently pursuing my <strong>B.E. in Computer Science and Engineering</strong> at 
+            SRM Madurai College for Engineering and Technology, I am passionate about bridging the gap 
+            between innovative ideas and real-world software solutions.
+          </p>
+
+          <div class="about-info-grid">
+            <div class="info-item">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <span class="info-label">Degree</span>
+                <span class="info-value">B.E. Computer Science</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-university"></i>
+              <div>
+                <span class="info-label">College</span>
+                <span class="info-value">SRM Madurai</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span class="info-label">Location</span>
+                <span class="info-value">Madurai, Tamil Nadu</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-calendar-alt"></i>
+              <div>
+                <span class="info-label">Year</span>
+                <span class="info-value">Third Year (2026)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <a href="mailto:jaidharini2006@gmail.com" class="btn btn-primary" id="aboutHireMeBtn">
+              <i class="fas fa-handshake"></i> Hire Me
+            </a>
+            <a href="https://github.com/jaidharini" target="_blank" rel="noopener" class="btn btn-outline" id="aboutGithubBtn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">My <span class="accent-text">Skills</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-grid">
+
+        <!-- Programming -->
+        <div class="skill-category reveal-up" style="--delay: 0.1s">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-pills">
+            <div class="skill-pill" id="skillPython">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+            </div>
+            <div class="skill-pill" id="skillC">
+              <i class="fas fa-copyright"></i>
+              <span>C</span>
+            </div>
+            <div class="skill-pill" id="skillJS">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-pill" id="skillSQL">
+              <i class="fas fa-database"></i>
+              <span>SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="skill-category reveal-up" style="--delay: 0.2s">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Web Development</h3>
+          </div>
+          <div class="skill-pills">
+            <div class="skill-pill" id="skillHTML">
+              <i class="fab fa-html5"></i>
+              <span>HTML</span>
+            </div>
+            <div class="skill-pill" id="skillCSS">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS</span>
+            </div>
+            <div class="skill-pill" id="skillJSWeb">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-pill" id="skillNextJs">
+              <i class="fas fa-layer-group"></i>
+              <span>Next.js</span>
+            </div>
+            <div class="skill-pill" id="skillFastAPI">
+              <i class="fas fa-bolt"></i>
+              <span>FastAPI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category reveal-up" style="--delay: 0.3s">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Tools &amp; Platforms</h3>
+          </div>
+          <div class="skill-pills">
+            <div class="skill-pill" id="skillGit">
+              <i class="fab fa-git-alt"></i>
+              <span>Git</span>
+            </div>
+            <div class="skill-pill" id="skillGithub">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </div>
+            <div class="skill-pill" id="skillVSCode">
+              <i class="fas fa-code"></i>
+              <span>VS Code</span>
+            </div>
+            <div class="skill-pill" id="skillAntigravity">
+              <i class="fas fa-robot"></i>
+              <span>Antigravity</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">What I've Built</span>
+        <h2 class="section-title">My <span class="accent-text">Projects</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card reveal-up" style="--delay: 0.1s" id="projectRoyalSpice">
+          <div class="project-card-top">
+            <div class="project-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/jaidharini/royal-spice-restaurant-website" target="_blank" rel="noopener" class="project-link" id="royalSpiceGithub" aria-label="View on GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://jaidharini.github.io/royal-spice-restaurant-website/" target="_blank" rel="noopener" class="project-link" id="royalSpiceLive" aria-label="Live Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-status status-live">
+            <span class="status-dot"></span> Live
+          </div>
+          <h3 class="project-title">Royal Spice Restaurant Website</h3>
+          <p class="project-desc">
+            A modern and responsive Indian restaurant website built using HTML, CSS, and JavaScript. Features an interactive menu, food gallery, testimonials, dark mode support, and a mobile-friendly design.
+          </p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Responsive</span>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://jaidharini.github.io/royal-spice-restaurant-website/" target="_blank" rel="noopener" class="btn btn-sm btn-primary" id="royalSpiceDemoBtn">
+              <i class="fas fa-play"></i> Live Demo
+            </a>
+            <a href="https://github.com/jaidharini/royal-spice-restaurant-website" target="_blank" rel="noopener" class="btn btn-sm btn-ghost" id="royalSpiceCodeBtn">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 – Coming Soon -->
+        <div class="project-card project-card-coming reveal-up" style="--delay: 0.2s" id="projectAICareer">
+          <div class="project-card-top">
+            <div class="project-icon project-icon-ai">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="project-links">
+              <span class="project-wip-badge">In Development</span>
+            </div>
+          </div>
+          <div class="project-status status-wip">
+            <span class="status-dot"></span> Coming Soon
+          </div>
+          <h3 class="project-title">AI Career Coach &amp; Mock Interview Platform</h3>
+          <p class="project-desc">
+            An AI-powered platform designed to help users prepare for interviews through intelligent question generation, answer evaluation, performance tracking, and personalised learning recommendations.
+          </p>
+          <div class="project-tags">
+            <span class="tag">AI / ML</span>
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Next.js</span>
+          </div>
+          <div class="project-coming-overlay">
+            <div class="coming-soon-text">
+              <i class="fas fa-hourglass-half"></i>
+              <span>Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 – Placeholder -->
+        <div class="project-card project-card-placeholder reveal-up" style="--delay: 0.3s" id="projectPlaceholder">
+          <div class="placeholder-inner">
+            <div class="placeholder-icon">
+              <i class="fas fa-plus-circle"></i>
+            </div>
+            <h3>New Project Coming Soon</h3>
+            <p>Something exciting is in the works. Stay tuned!</p>
+            <div class="placeholder-dots">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION SECTION ===== -->
+  <section class="section education-section" id="education">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">My Academic Journey</span>
+        <h2 class="section-title">My <span class="accent-text">Education</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="education-timeline reveal-up">
+        <div class="timeline-line"></div>
+        <div class="education-card" id="educationCard">
+          <div class="timeline-dot">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="education-content">
+            <div class="education-header">
+              <div class="edu-icon">
+                <i class="fas fa-university"></i>
+              </div>
+              <div>
+                <h3 class="edu-institution">SRM Madurai College for Engineering and Technology</h3>
+                <span class="edu-location"><i class="fas fa-map-marker-alt"></i> Madurai, Tamil Nadu, India</span>
+              </div>
+            </div>
+            <div class="edu-details">
+              <div class="edu-degree">
+                <i class="fas fa-scroll"></i>
+                <div>
+                  <span class="edu-label">Degree</span>
+                  <span class="edu-value">Bachelor of Engineering – Computer Science and Engineering</span>
+                </div>
+              </div>
+              <div class="edu-period">
+                <i class="fas fa-calendar-alt"></i>
+                <div>
+                  <span class="edu-label">Duration</span>
+                  <span class="edu-value">2022 – 2026 (Expected)</span>
+                </div>
+              </div>
+              <div class="edu-status">
+                <i class="fas fa-user-graduate"></i>
+                <div>
+                  <span class="edu-label">Current Status</span>
+                  <span class="edu-value">Third Year Student</span>
+                </div>
+              </div>
+            </div>
+            <div class="edu-badges">
+              <span class="edu-badge">Computer Science</span>
+              <span class="edu-badge">Engineering</span>
+              <span class="edu-badge">Class of 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact <span class="accent-text">Me</span></h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">
+          I'm always open to discussing new opportunities, collaborations, or just a friendly chat!
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info reveal-left">
+          <h3 class="contact-info-title">Let's Connect</h3>
+          <p class="contact-info-text">
+            Feel free to reach out via any of the following channels. I typically respond within 24 hours.
+          </p>
+
+          <div class="contact-items">
+            <a href="mailto:jaidharini2006@gmail.com" class="contact-item" id="contactEmailLink">
+              <div class="contact-item-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-item-info">
+                <span class="contact-item-label">Email</span>
+                <span class="contact-item-value">jaidharini2006@gmail.com</span>
+              </div>
+              <i class="fas fa-arrow-right contact-item-arrow"></i>
+            </a>
+
+            <a href="tel:6385848136" class="contact-item" id="contactPhoneLink">
+              <div class="contact-item-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-item-info">
+                <span class="contact-item-label">Phone</span>
+                <span class="contact-item-value">+91 6385848136</span>
+              </div>
+              <i class="fas fa-arrow-right contact-item-arrow"></i>
+            </a>
+
+            <a href="https://github.com/jaidharini" target="_blank" rel="noopener" class="contact-item" id="contactGithubLink">
+              <div class="contact-item-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="contact-item-info">
+                <span class="contact-item-label">GitHub</span>
+                <span class="contact-item-value">github.com/jaidharini</span>
+              </div>
+              <i class="fas fa-arrow-right contact-item-arrow"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/jai-dharini-c-s-726957348/" target="_blank" rel="noopener" class="contact-item" id="contactLinkedinLink">
+              <div class="contact-item-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="contact-item-info">
+                <span class="contact-item-label">LinkedIn</span>
+                <span class="contact-item-value">Jai Dharini C S</span>
+              </div>
+              <i class="fas fa-arrow-right contact-item-arrow"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper reveal-right">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="contactName" class="form-label">Full Name</label>
+              <div class="form-input-wrapper">
+                <i class="fas fa-user form-icon"></i>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="Your Name" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail" class="form-label">Email Address</label>
+              <div class="form-input-wrapper">
+                <i class="fas fa-envelope form-icon"></i>
+                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject" class="form-label">Subject</label>
+              <div class="form-input-wrapper">
+                <i class="fas fa-tag form-icon"></i>
+                <input type="text" id="contactSubject" name="subject" class="form-input" placeholder="What is it about?" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Message</label>
+              <div class="form-input-wrapper form-textarea-wrapper">
+                <i class="fas fa-comment form-icon form-icon-top"></i>
+                <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Write your message here..." rows="5" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="contactSubmitBtn">
+              <i class="fas fa-paper-plane"></i>
+              <span>Send Message</span>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="fas fa-check-circle"></i>
+              <span>Message sent! I'll get back to you soon.</span>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="footer-bg">
+      <div class="footer-orb"></div>
+    </div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-initials">JD</span>
+            <span class="logo-text">Jai Dharini C S</span>
+          </div>
+          <p class="footer-tagline">
+            Building the future, one line of code at a time.
+          </p>
+          <div class="footer-social">
+            <a href="https://github.com/jaidharini" target="_blank" rel="noopener" class="social-link" id="footerGithub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jai-dharini-c-s-726957348/" target="_blank" rel="noopener" class="social-link" id="footerLinkedin" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:jaidharini2006@gmail.com" class="social-link" id="footerEmail" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home" id="footerLinkHome">Home</a></li>
+            <li><a href="#about" id="footerLinkAbout">About</a></li>
+            <li><a href="#skills" id="footerLinkSkills">Skills</a></li>
+            <li><a href="#projects" id="footerLinkProjects">Projects</a></li>
+            <li><a href="#contact" id="footerLinkContact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><i class="fas fa-envelope"></i> jaidharini2006@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +91 6385848136</li>
+            <li><i class="fas fa-map-marker-alt"></i> Madurai, Tamil Nadu, India</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-divider"></div>
+        <p>© 2026 <span class="accent-text">Jai Dharini C S</span>. All Rights Reserved.</p>
+        <p class="footer-credits">Designed &amp; Built with <i class="fas fa-heart" style="color: var(--accent);"></i> by Jai Dharini</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
