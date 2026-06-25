@@ -34,7 +34,7 @@ Currently under development.
 ## Live Demo
 
 Portfolio:
-[Portfolio](https://jaidharini.github.io/portfolio/)
+[https://jaidharini.github.io/portfolio/](https://jaidharini.github.io/portfolio/)
 
 ## Contact
 
